@@ -1,0 +1,11 @@
+{
+  "name": "webpage-qrcode-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for generating webpage QR codes",
+  "scripts": {
+    "generate-icons": "node generate-icons.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.6"
+  }
+} 

@@ -1,0 +1,106 @@
+.webpage-qrcode-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 999999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webpage-qrcode-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.webpage-qrcode-container .favicon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.webpage-qrcode-modal {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999998;
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.webpage-qrcode-modal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.webpage-qrcode-modal #qrcode-container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webpage-qrcode-modal #qrcode-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.webpage-qrcode-modal .website-info {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.webpage-qrcode-modal .website-title {
+  font-size: 14px;
+  color: #333333;
+  margin-top: 8px;
+  word-break: break-all;
+}
+
+/* 高对比度模式支持 */
+@media (forced-colors: active) {
+  .webpage-qrcode-container {
+    background: Canvas;
+    border: 1px solid CanvasText;
+  }
+
+  .webpage-qrcode-modal {
+    background: Canvas;
+    border: 1px solid CanvasText;
+  }
+
+  .website-title {
+    color: CanvasText;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .webpage-qrcode-container {
+    background: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .webpage-qrcode-modal {
+    background: #2c2c2c;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .website-title {
+    color: #ffffff;
+  }
+} 
